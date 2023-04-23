@@ -27,11 +27,14 @@ export class BasicPageComponent implements OnInit {
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
-    this.myForm.reset(rtx5090);
+    // this.myForm.reset(rtx5090);
   }
 
   onSave(): void {
-    if (this.myForm.invalid) return;
+    if (this.myForm.invalid) {
+      this.myForm.markAllAsTouched();
+      return;
+    };
     console.log(this.myForm.value);
     this.myForm.reset({ price: 0, inStorage: 0 });
   }
