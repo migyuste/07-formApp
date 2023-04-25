@@ -27,4 +27,5 @@ export class EmailValidatorService implements AsyncValidator {
       }).pipe(delay(3000));
       return httpCallObservable;
   }
+    
 }
